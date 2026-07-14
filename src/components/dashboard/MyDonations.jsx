@@ -21,57 +21,53 @@ export default function MyDonations() {
 
 
   useEffect(() => {
-
-    if (!session?.user?.email) return;
-
+    if (!session?.user?.email || !session?.session?.token) {
+      setLoading(false);
+      return;
+    }
 
     const loadDonations = async () => {
-
       try {
-
-        const token = await authClient.token();
-
-
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/donations/my-donations?email=${session.user.email}`,
           {
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${session.session.token}`,
             },
           }
         );
 
-
         const data = await res.json();
 
-        setDonations(data);
+        console.log(data);
 
+        if (!res.ok) {
+          throw new Error(data.message || "Failed to fetch donations");
+        }
 
+        setDonations(Array.isArray(data) ? data : []);
       } catch (error) {
-
         console.log(error);
-
+        setDonations([]);
       } finally {
-
         setLoading(false);
-
       }
-
     };
 
-
     loadDonations();
-
-
   }, [session]);
   console.log(donations);
 
-  const totalAmount = donations.reduce(
-    (sum, donation) => sum + Number(donation.amount),
-    0
-  );
+  const totalAmount = Array.isArray(donations)
+    ? donations.reduce(
+      (sum, donation) => sum + Number(donation.amount),
+      0
+    )
+    : 0;
 
-  const totalDonations = donations.length;
+  const totalDonations = Array.isArray(donations)
+    ? donations.length
+    : 0;
 
   const lastDonation =
     donations.length > 0
@@ -184,7 +180,8 @@ export default function MyDonations() {
 
           
               {
-                donations.map((donation) => {
+                Array.isArray(donations) &&
+                donations.map((donation)=> {
 
                   const active =
                     donation.campaignDeadline &&

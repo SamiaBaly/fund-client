@@ -76,7 +76,7 @@ export default function ContributionButton({ campaign }) {
 
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            
           },
 
 

@@ -16,22 +16,20 @@ export default function ManageDonations() {
 
       try {
 
-        const token = await authClient.token();
-
-
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/donations`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
+          `${process.env.NEXT_PUBLIC_API_URL}/donations`
         );
 
         const data = await res.json();
         console.log("DONATIONS:", data);
 
-        setDonations(data);
+        setDonations(
+          Array.isArray(data)
+            ? data
+            : Array.isArray(data.donations)
+              ? data.donations
+              : []
+        );
 
       } catch (error) {
 
@@ -60,17 +58,13 @@ export default function ManageDonations() {
 
     try {
 
-      const token = await authClient.token();
+    
 
 
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/donations/${id}`,
         {
           method: "DELETE",
-
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
         }
       );
 

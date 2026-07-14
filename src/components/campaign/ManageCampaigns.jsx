@@ -19,9 +19,9 @@ export default function ManageCampaigns() {
         setLoading(true);
         setError(null);
 
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/campaigns/admin`
-        );
+      const res = await fetch(
+  `${process.env.NEXT_PUBLIC_API_URL}/campaigns/admin`
+);
 
         if (!res.ok) {
           throw new Error("Failed to fetch campaigns");
@@ -44,7 +44,12 @@ export default function ManageCampaigns() {
 
     loadCampaigns();
   }, []);
+
+
+
+
   const handleDelete = async (id) => {
+    console.log("DELETE ID:", id);
 
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this campaign?"
@@ -55,12 +60,12 @@ export default function ManageCampaigns() {
     try {
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/campaigns/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/campaigns/admin/${id}`,
         {
           method: "DELETE",
         }
       );
-
+      console.log("DELETE STATUS:", res.status);
       const data = await res.json();
 
       if (!res.ok) {
@@ -86,6 +91,8 @@ export default function ManageCampaigns() {
     }
 
   };
+
+
 
   const handleStatusUpdate = async (id, status) => {
     try {

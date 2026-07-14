@@ -36,12 +36,17 @@ export default function CampaignsPage() {
 
 
       const res = await api.get(
-        `/campaigns?page=${currentPage}&limit=${limit}&search=${search}&category=${category}`
+        `/campaigns?page=${currentPage}&limit=${limit}&search=${search}&category=${category}&status=approved`
+      );
+
+
+      const approvedCampaigns = res.data.campaigns.filter(
+        (campaign) => campaign.status === "approved"
       );
 
 
       setCampaigns(
-        res.data.campaigns
+        approvedCampaigns
       );
 
 
@@ -65,10 +70,6 @@ export default function CampaignsPage() {
 
   };
 
-
-
-
-
   useEffect(() => {
 
     fetchCampaigns();
@@ -78,10 +79,6 @@ export default function CampaignsPage() {
     search,
     category
   ]);
-
-
-
-
 
 
   // Category list
@@ -97,8 +94,9 @@ export default function CampaignsPage() {
         );
 
 
-        const data =
-          res.data.campaigns;
+        const data = res.data.campaigns.filter(
+          (campaign) => campaign.status === "approved"
+        );
 
 
         const unique = [

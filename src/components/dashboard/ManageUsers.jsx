@@ -5,9 +5,13 @@ import { toast } from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 
 export default function ManageUsers() {
+  
   const { data: session } = authClient.useSession();
-  console.log(session);
-  console.log(session?.token);
+
+  console.log("session", session);
+  console.log("session.session",session?.session);
+  console.log(session?.session?.token, "token");
+  console.log(session?.user, "user");
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -78,47 +82,35 @@ export default function ManageUsers() {
     }
   };
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this user?"
-    );
-
-    if (!confirmDelete) return;
+    if (!confirm("Are you sure?")) return;
 
     try {
       const token = session?.session?.token;
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/users`,
+        `${process.env.NEXT_PUBLIC_API_URL}/users/${id}`,
         {
+          method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
 
-      console.log("Status:", res.status);
-
-      const data = await res.json();
-      console.log(data);
-
-      if (!res.ok) {
-        throw new Error(data.message || "Failed to fetch users");
-      }
-
-      setUsers(data);
-
       if (!res.ok) {
         throw new Error("Delete failed");
       }
 
       setUsers((prev) =>
-        prev.filter((user) => user._id !== id)
+        Array.isArray(prev)
+          ? prev.filter((user) => user._id !== id)
+          : []
       );
 
       toast.success("User deleted successfully");
-    } catch (error) {
-      console.log(error);
-      toast.error("Failed to delete user");
+    } catch (err) {
+      console.log(err);
+      toast.error("Delete failed");
     }
   };
 
