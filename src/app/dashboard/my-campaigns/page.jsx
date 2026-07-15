@@ -23,38 +23,6 @@ export default function MyCampaignsPage() {
 
 
 
-  // const fetchMyCampaigns = async () => {
-
-  //   try {
-
-  //     setLoading(true);
-
-  //     const res = await api.get(
-  //       `/campaigns/my-campaigns?email=${session.user.email}`
-  //     );
-
-
-  //     console.log("My Campaigns:", res.data);
-
-
-  //     setCampaigns(res.data);
-
-
-  //   } catch (error) {
-
-  //     console.log(
-  //       "Fetch campaigns error:",
-  //       error
-  //     );
-
-  //   } finally {
-
-  //     setLoading(false);
-
-  //   }
-
-  // };
-
   const handleDelete = async (id) => {
 
     const confirmDelete = window.confirm(

@@ -86,7 +86,7 @@ export default function SupporterHomePage() {
 
       <div className="mb-10">
 
-        <h1 className="text-3xl font-bold dark:text-white">
+        <h1 className="text-3xl font-bold !text-slate-900 dark:!text-white">
           Welcome, {session?.user?.name} 👋
         </h1>
 
@@ -112,7 +112,7 @@ export default function SupporterHomePage() {
               {item.title}
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold dark:text-white">
+            <h2 className="mt-2 text-3xl font-bold !text-slate-900 dark:!text-white">
               {item.value}
             </h2>
 
@@ -135,7 +135,7 @@ export default function SupporterHomePage() {
 
         <div className="mb-6 flex items-center justify-between">
 
-          <h2 className="text-2xl font-bold dark:text-white">
+          <h2 className="text-3xl font-bold !text-slate-900 dark:!text-white">
             Recent Donations
           </h2>
 
@@ -181,7 +181,7 @@ export default function SupporterHomePage() {
                   className="border-b dark:border-slate-700"
                 >
 
-                  <td className="px-4 py-4 font-medium dark:text-white">
+                  <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
                     {donation.campaignTitle}
                   </td>
 

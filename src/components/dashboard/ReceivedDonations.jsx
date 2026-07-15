@@ -61,11 +61,7 @@ export default function ReceivedDonations() {
 
       <div className="mb-8">
 
-        <h1 className="
-          text-3xl
-          font-bold
-          dark:text-white
-        ">
+        <h1 className="text-3xl font-bold !text-slate-900 dark:!text-white">
           Received Donations ❤️
         </h1>
 
@@ -158,7 +154,7 @@ export default function ReceivedDonations() {
             "
                       >
 
-                        <td className="px-6 py-4 font-semibold dark:text-white">
+                        <td className="px-6 py-4">
 
                           {donation.campaignTitle}
 

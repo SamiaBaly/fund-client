@@ -115,11 +115,11 @@ export default function EditCampaignPage() {
   }
 
   return (
-    <section className="min-h-screen bg-slate-50 px-6 py-16 dark:bg-slate-950">
+    <section >
       <div className="mx-auto max-w-3xl">
 
         <div className="mb-10 text-center">
-          <h1 className="text-4xl font-bold dark:text-white">
+          <h1 className="text-3xl font-bold !text-slate-900 dark:!text-white">
             Update Campaign
           </h1>
 
@@ -130,37 +130,91 @@ export default function EditCampaignPage() {
 
         <form
           onSubmit={handleUpdate}
-          className="space-y-6 rounded-3xl border bg-white p-8 shadow-xl dark:bg-slate-900"
+          className="
+    space-y-6
+    rounded-3xl
+    border
+    border-slate-200
+    bg-white
+    p-8
+    shadow-xl
+    dark:border-slate-800
+    dark:bg-slate-900
+  "
         >
-
+          {/* Image URL */}
           <div>
-            <label className="mb-2 block font-medium dark:text-white">
+            <label className="mb-2 block font-semibold text-slate-800 dark:text-slate-200">
               Image URL
             </label>
 
             <input
+              type="text"
               name="image"
               value={formData.image}
               onChange={handleChange}
-              className="w-full rounded-xl border px-4 py-3 dark:bg-slate-800 dark:text-white"
+              placeholder="https://example.com/image.jpg"
+              className="
+        w-full
+        rounded-xl
+        border
+        border-slate-300
+        bg-white
+        px-4
+        py-3
+        text-slate-900
+        placeholder:text-slate-400
+        outline-none
+        transition
+        focus:border-blue-500
+        focus:ring-2
+        focus:ring-blue-200
+        dark:border-slate-700
+        dark:bg-slate-800
+        dark:text-white
+        dark:placeholder:text-slate-500
+      "
             />
           </div>
 
+          {/* Campaign Title */}
           <div>
-            <label className="mb-2 block font-medium dark:text-white">
+            <label className="mb-2 block font-semibold text-slate-800 dark:text-slate-200">
               Campaign Title
             </label>
 
             <input
+              type="text"
               name="title"
               value={formData.title}
               onChange={handleChange}
-              className="w-full rounded-xl border px-4 py-3 dark:bg-slate-800 dark:text-white"
+              placeholder="Enter campaign title"
+              className="
+        w-full
+        rounded-xl
+        border
+        border-slate-300
+        bg-white
+        px-4
+        py-3
+        text-slate-900
+        placeholder:text-slate-400
+        outline-none
+        transition
+        focus:border-blue-500
+        focus:ring-2
+        focus:ring-blue-200
+        dark:border-slate-700
+        dark:bg-slate-800
+        dark:text-white
+        dark:placeholder:text-slate-500
+      "
             />
           </div>
 
+          {/* Category */}
           <div>
-            <label className="mb-2 block font-medium dark:text-white">
+            <label className="mb-2 block font-semibold text-slate-800 dark:text-slate-200">
               Category
             </label>
 
@@ -168,34 +222,73 @@ export default function EditCampaignPage() {
               name="category"
               value={formData.category}
               onChange={handleChange}
-              className="w-full rounded-xl border px-4 py-3 dark:bg-slate-800 dark:text-white"
+              className="
+        w-full
+        rounded-xl
+        border
+        border-slate-300
+        bg-white
+        px-4
+        py-3
+        text-slate-900
+        outline-none
+        transition
+        focus:border-blue-500
+        focus:ring-2
+        focus:ring-blue-200
+        dark:border-slate-700
+        dark:bg-slate-800
+        dark:text-white
+      "
             >
-              <option>Education</option>
-              <option>Health</option>
-              <option>Emergency</option>
-              <option>Environment</option>
-              <option>Startup</option>
+              <option value="">Select Category</option>
+              <option value="Education">Education</option>
+              <option value="Health">Health</option>
+              <option value="Emergency">Emergency</option>
+              <option value="Environment">Environment</option>
+              <option value="Startup">Startup</option>
             </select>
           </div>
 
+          {/* Description */}
           <div>
-            <label className="mb-2 block font-medium dark:text-white">
+            <label className="mb-2 block font-semibold text-slate-800 dark:text-slate-200">
               Description
             </label>
 
             <textarea
-              rows={5}
+              rows={6}
               name="description"
               value={formData.description}
               onChange={handleChange}
-              className="w-full rounded-xl border px-4 py-3 dark:bg-slate-800 dark:text-white"
+              placeholder="Write campaign description..."
+              className="
+        w-full
+        rounded-xl
+        border
+        border-slate-300
+        bg-white
+        px-4
+        py-3
+        text-slate-900
+        placeholder:text-slate-400
+        outline-none
+        transition
+        focus:border-blue-500
+        focus:ring-2
+        focus:ring-blue-200
+        dark:border-slate-700
+        dark:bg-slate-800
+        dark:text-white
+        dark:placeholder:text-slate-500
+      "
             />
           </div>
 
+          {/* Goal & Minimum Donation */}
           <div className="grid gap-6 md:grid-cols-2">
-
             <div>
-              <label className="mb-2 block font-medium dark:text-white">
+              <label className="mb-2 block font-semibold text-slate-800 dark:text-slate-200">
                 Goal Amount
               </label>
 
@@ -204,12 +297,32 @@ export default function EditCampaignPage() {
                 name="goal"
                 value={formData.goal}
                 onChange={handleChange}
-                className="w-full rounded-xl border px-4 py-3 dark:bg-slate-800 dark:text-white"
+                placeholder="10000"
+                className="
+          w-full
+          rounded-xl
+          border
+          border-slate-300
+          bg-white
+          px-4
+          py-3
+          text-slate-900
+          placeholder:text-slate-400
+          outline-none
+          transition
+          focus:border-blue-500
+          focus:ring-2
+          focus:ring-blue-200
+          dark:border-slate-700
+          dark:bg-slate-800
+          dark:text-white
+          dark:placeholder:text-slate-500
+        "
               />
             </div>
 
             <div>
-              <label className="mb-2 block font-medium dark:text-white">
+              <label className="mb-2 block font-semibold text-slate-800 dark:text-slate-200">
                 Minimum Donation
               </label>
 
@@ -218,14 +331,34 @@ export default function EditCampaignPage() {
                 name="minimumDonation"
                 value={formData.minimumDonation}
                 onChange={handleChange}
-                className="w-full rounded-xl border px-4 py-3 dark:bg-slate-800 dark:text-white"
+                placeholder="50"
+                className="
+          w-full
+          rounded-xl
+          border
+          border-slate-300
+          bg-white
+          px-4
+          py-3
+          text-slate-900
+          placeholder:text-slate-400
+          outline-none
+          transition
+          focus:border-blue-500
+          focus:ring-2
+          focus:ring-blue-200
+          dark:border-slate-700
+          dark:bg-slate-800
+          dark:text-white
+          dark:placeholder:text-slate-500
+        "
               />
             </div>
-
           </div>
 
+          {/* Deadline */}
           <div>
-            <label className="mb-2 block font-medium dark:text-white">
+            <label className="mb-2 block font-semibold text-slate-800 dark:text-slate-200">
               Deadline
             </label>
 
@@ -234,18 +367,45 @@ export default function EditCampaignPage() {
               name="deadline"
               value={formData.deadline}
               onChange={handleChange}
-              className="w-full rounded-xl border px-4 py-3 dark:bg-slate-800 dark:text-white"
+              className="
+        w-full
+        rounded-xl
+        border
+        border-slate-300
+        bg-white
+        px-4
+        py-3
+        text-slate-900
+        outline-none
+        transition
+        focus:border-blue-500
+        focus:ring-2
+        focus:ring-blue-200
+        dark:border-slate-700
+        dark:bg-slate-800
+        dark:text-white
+      "
             />
           </div>
 
-          <Button
+          <button
             type="submit"
             disabled={updating}
-            className="w-full rounded-none"
+            className="
+      w-full
+      rounded-xl
+      bg-blue-600
+      py-3
+      font-semibold
+      text-white
+      transition
+      hover:bg-blue-700
+      disabled:cursor-not-allowed
+      disabled:opacity-60
+    "
           >
             {updating ? "Updating..." : "Update Campaign"}
-          </Button>
-
+          </button>
         </form>
 
       </div>

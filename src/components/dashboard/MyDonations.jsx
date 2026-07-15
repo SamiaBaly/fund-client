@@ -102,12 +102,7 @@ export default function MyDonations() {
       <div className="mb-8">
 
 
-        <h1 className="
-          text-3xl
-          font-bold
-          text-slate-900
-          dark:text-white
-        ">
+        <h1 className="text-3xl font-bold !text-slate-900 dark:!text-white">
           My Donations ❤️
         </h1>
        
@@ -213,7 +208,7 @@ export default function MyDonations() {
                       />
 
                       <div className="p-5">
-                        <h2 className="text-xl font-bold dark:text-white">
+                        <h2 className="mt-2 text-xl font-bold !text-slate-900 dark:!text-white">
                           {donation.campaignTitle}
                         </h2>
 

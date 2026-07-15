@@ -114,12 +114,12 @@ export default function CreatorHomePage() {
 
       <div className="mb-10">
 
-        <h1 className="text-3xl font-bold dark:text-white">
+        <h1 className="text-3xl font-bold !text-slate-900 dark:!text-white">
           Welcome, {session?.user?.name} 👋
         </h1>
 
         <p className="mt-2 text-slate-500">
-          Here's an overview of your crowdfunding campaigns.
+          Heres an overview of your crowdfunding campaigns.
         </p>
 
       </div>
@@ -140,7 +140,7 @@ export default function CreatorHomePage() {
               {item.title}
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold dark:text-white">
+            <h2 className="mt-2 text-3xl font-bold !text-slate-900 dark:!text-white">
               {item.value}
             </h2>
 
@@ -156,7 +156,7 @@ export default function CreatorHomePage() {
           className="rounded-2xl border bg-white p-6 shadow transition hover:shadow-lg dark:bg-slate-900"
         >
 
-          <h3 className="text-xl font-bold dark:text-white">
+          <h3 className="mt-2 text-xl font-bold !text-slate-900 dark:!text-white">
             Create Campaign
           </h3>
 
@@ -171,7 +171,7 @@ export default function CreatorHomePage() {
           className="rounded-2xl border bg-white p-6 shadow transition hover:shadow-lg dark:bg-slate-900"
         >
 
-          <h3 className="text-xl font-bold dark:text-white">
+          <h3 className="mt-2 text-xl font-bold !text-slate-900 dark:!text-white">
             My Campaigns
           </h3>
 
@@ -186,7 +186,7 @@ export default function CreatorHomePage() {
 
         <div className="mb-6 flex items-center justify-between">
 
-          <h2 className="text-2xl font-bold dark:text-white">
+          <h2 className="mt-2 text-xl font-bold !text-slate-900 dark:!text-white">
             Recent Campaigns
           </h2>
 
@@ -226,7 +226,7 @@ export default function CreatorHomePage() {
                   className="border-b dark:border-slate-700"
                 >
 
-                  <td className="px-4 py-4 font-medium dark:text-white">
+                  <td className="mt-2 text-md font-semibold !text-slate-900 dark:!text-white">
                     {campaign.title}
                   </td>
 

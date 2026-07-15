@@ -114,7 +114,7 @@ export default function AdminHomePage() {
 
       <div className="mb-10">
 
-        <h1 className="text-3xl font-bold dark:text-white">
+        <h1 className="text-3xl font-bold !text-slate-900 dark:!text-white">
           Admin Dashboard
         </h1>
 
@@ -129,18 +129,30 @@ export default function AdminHomePage() {
 
           <div
             key={index}
-            className="rounded-2xl bg-white p-6 shadow dark:bg-slate-900"
+            className="
+rounded-2xl
+border
+border-slate-200
+bg-white
+p-6
+shadow-sm
+transition
+hover:-translate-y-1
+hover:shadow-xl
+dark:border-slate-800
+dark:bg-slate-900
+"
           >
 
-            <div className="mb-4 text-3xl text-primary">
+            <div className="mb-4 text-3xl text-blue-600">
               {item.icon}
             </div>
 
-            <p className="text-slate-500">
+            <p className="text-slate-600 dark:text-slate-400">
               {item.title}
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold dark:text-white">
+            <h2 className="mt-2 text-3xl font-bold !text-slate-900 dark:!text-white">
               {item.value}
             </h2>
 
@@ -153,14 +165,26 @@ export default function AdminHomePage() {
 
         <Link
           href="/dashboard/campaigns"
-          className="rounded-2xl border bg-white p-6 shadow transition hover:shadow-lg dark:bg-slate-900"
+          className="
+rounded-2xl
+border
+border-slate-200
+bg-white
+p-6
+shadow-sm
+transition-all
+hover:-translate-y-1
+hover:shadow-xl
+dark:border-slate-800
+dark:bg-slate-900
+"
         >
 
-          <h3 className="text-xl font-bold dark:text-white">
+          <h3 className="text-xl font-bold !text-slate-900 dark:!text-white">
             Manage Campaigns
           </h3>
 
-          <p className="mt-2 text-slate-500">
+          <p className="mt-2 text-slate-600 dark:text-slate-400">
             Approve, reject and manage all campaigns.
           </p>
 
@@ -171,7 +195,7 @@ export default function AdminHomePage() {
           className="rounded-2xl border bg-white p-6 shadow transition hover:shadow-lg dark:bg-slate-900"
         >
 
-          <h3 className="text-xl font-bold dark:text-white">
+          <h3 className="text-xl font-bold !text-slate-900 dark:!text-white">
             Manage Users
           </h3>
 
@@ -182,11 +206,21 @@ export default function AdminHomePage() {
         </Link>
 
       </div>
-      <div className="mt-10 rounded-2xl bg-white p-6 shadow dark:bg-slate-900">
+      <div className="
+mt-10
+rounded-2xl
+border
+border-slate-200
+bg-white
+p-6
+shadow-sm
+dark:border-slate-800
+dark:bg-slate-900
+">
 
         <div className="mb-6 flex items-center justify-between">
 
-          <h2 className="text-2xl font-bold dark:text-white">
+          <h2 className="text-2xl font-bold !text-slate-900 dark:!text-white">
             Recent Pending Campaigns
           </h2>
 
@@ -203,27 +237,27 @@ export default function AdminHomePage() {
 
           <table className="w-full">
 
-            <thead className="border-b dark:border-slate-700">
+            <thead className="bg-slate-50 dark:bg-slate-800">
 
               <tr>
 
-                <th className="px-4 py-3 text-left">
+               <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-300">
                   Title
                 </th>
 
-                <th className="px-4 py-3 text-left">
+               <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-300">
                   Creator
                 </th>
 
-                <th className="px-4 py-3 text-left">
+               <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-300">
                   Category
                 </th>
 
-                <th className="px-4 py-3 text-left">
+               <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-300">
                   Goal
                 </th>
 
-                <th className="px-4 py-3 text-left">
+               <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-300">
                   Status
                 </th>
 
@@ -240,31 +274,48 @@ export default function AdminHomePage() {
 
                   <tr
                     key={campaign._id}
-                    className="border-b dark:border-slate-700"
+                    className="
+border-b
+border-slate-200
+transition
+hover:bg-slate-50
+dark:border-slate-800
+dark:hover:bg-slate-800/50
+"
                   >
 
-                    <td className="px-4 py-4 font-medium dark:text-white">
+                    <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
                       {campaign.title}
                     </td>
 
-                    <td className="px-4 py-4">
+                    <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
                       {campaign.creatorName}
                     </td>
 
-                    <td className="px-4 py-4">
+                    <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
                       {campaign.category}
                     </td>
 
-                    <td className="px-4 py-4">
+                    <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
                       ${campaign.goal}
                     </td>
 
-                    <td className="px-4 py-4">
+                    <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
 
-                      <span className="rounded-full bg-yellow-100 px-3 py-1 text-sm font-semibold text-yellow-700">
-
+                      <span
+                        className="
+  rounded-full
+  bg-amber-100
+  px-3
+  py-1
+  text-xs
+  font-semibold
+  text-amber-700
+  dark:bg-amber-500/20
+  dark:text-amber-300
+"
+                      >
                         Pending
-
                       </span>
 
                     </td>
@@ -281,7 +332,7 @@ export default function AdminHomePage() {
 
                     <td
                       colSpan={5}
-                      className="py-8 text-center text-slate-500"
+                      className="py-10 text-center text-slate-500 dark:text-slate-400"
                     >
                       No pending campaigns.
                     </td>

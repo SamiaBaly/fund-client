@@ -96,12 +96,7 @@ export default function MyCampaignCard({
         {/* Title */}
 
         <h2
-          className="
-          text-xl
-          font-bold
-          text-slate-900
-          dark:text-white
-          "
+          className="text-2xl font-bold !text-slate-900 dark:!text-white"
         >
           {campaign.title}
         </h2>
