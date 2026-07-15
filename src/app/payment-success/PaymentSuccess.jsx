@@ -171,7 +171,7 @@ export default function PaymentSuccess() {
                 px-6
                 py-3
                 font-semibold
-                text-white
+                !text-slate-900 dark:!text-white
                 transition
                 hover:opacity-90
               "

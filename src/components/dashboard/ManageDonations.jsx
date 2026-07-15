@@ -115,7 +115,7 @@ export default function ManageDonations() {
 
         <div>
 
-          <h1 className="text-3xl font-bold dark:text-white">
+          <h1 className="text-3xl font-bold !text-slate-900 dark:!text-white">
             Manage Donations
           </h1>
 
@@ -198,7 +198,7 @@ export default function ManageDonations() {
 
                       <div>
 
-                        <h3 className="font-semibold dark:text-white">
+                        <h3 className="font-semibold px-4 py-4 text-slate-700 dark:text-slate-300">
                           {donation.donorName || donation.donorEmail || "Unknown"}
                         </h3>
 
@@ -210,7 +210,7 @@ export default function ManageDonations() {
 
 
 
-                    <td className="px-6 py-4 dark:text-white">
+                    <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
 
                       {donation.campaignTitle}
 
