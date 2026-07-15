@@ -8,8 +8,10 @@ export default async function DashboardLayout({ children }) {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+  console.log("Dashboard session:", session);
+console.log("Role:", session?.user?.role);
 
-  // Login না থাকলে
+ 
   if (!session) {
     redirect("/login");
   }

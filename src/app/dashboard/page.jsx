@@ -5,29 +5,61 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
+
   const { data: session, isPending } = authClient.useSession();
+  console.log("SESSION:", session);
+  console.log("PENDING:", isPending);
+
   const router = useRouter();
 
+
   useEffect(() => {
-    if (isPending || !session) return;
 
-    switch (session.user.role) {
-      case "admin":
-        router.replace("/dashboard/admin-home");
-        break;
+    if (isPending) return;
 
-      case "creator":
-        router.replace("/dashboard/creator-home");
-        break;
 
-      case "supporter":
-        router.replace("/dashboard/supporter-home");
-        break;
-
-      default:
-        router.replace("/");
+    if (!session) {
+      router.replace("/login");
+      return;
     }
+
+
+    const role = session.user?.role;
+
+
+    if (role === "admin") {
+      router.replace("/dashboard/admin-home");
+    }
+
+    else if (role === "creator") {
+      router.replace("/dashboard/creator-home");
+    }
+
+    else if (role === "supporter") {
+      router.replace("/dashboard/supporter-home");
+    }
+
+    else {
+      router.replace("/");
+    }
+
+
   }, [session, isPending, router]);
 
-  return <p className="text-center py-10">Loading Dashboard...</p>;
+
+
+  if (isPending) {
+    return (
+      <p className="text-center py-10">
+        Checking session...
+      </p>
+    );
+  }
+
+
+  return (
+    <p className="text-center py-10">
+      Loading Dashboard...
+    </p>
+  );
 }

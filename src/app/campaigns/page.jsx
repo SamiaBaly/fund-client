@@ -40,20 +40,11 @@ export default function CampaignsPage() {
       );
 
 
-      const approvedCampaigns = res.data.campaigns.filter(
-        (campaign) => campaign.status === "approved"
-      );
+      
 
 
-      setCampaigns(
-        approvedCampaigns
-      );
-
-
-      setTotalPages(
-        res.data.totalPages
-      );
-
+      setCampaigns(res.data.campaigns);
+      setTotalPages(res.data.totalPages);
 
     } catch (error) {
 
