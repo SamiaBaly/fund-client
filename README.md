@@ -1,36 +1,251 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Crowdfunding Platform - Client
 
-## Getting Started
+A modern crowdfunding platform frontend built with **Next.js**, **React**, **Tailwind CSS**, **HeroUI**, and **Better Auth**. The platform allows users to create fundraising campaigns, support meaningful causes, and manage campaigns through role-based dashboards.
 
-First, run the development server:
+---
+
+## 🚀 Live Website
+
+https://client-beta-ruby-13.vercel.app
+
+---
+
+## ✨ Features
+
+- Secure Authentication with Better Auth
+- Role-Based Dashboard (Admin, Creator, Supporter)
+- Create, Update & Delete Campaigns
+- Campaign Approval System
+- Stripe Payment Integration
+- Browse & Search Campaigns
+- Responsive Design
+- Dark & Light Theme
+- Dashboard Statistics
+- Protected Routes
+- Toast Notifications
+- Modern UI with HeroUI
+
+---
+
+## 🛠️ Technologies Used
+
+- Next.js (App Router)
+- React.js
+- Tailwind CSS
+- HeroUI
+- Better Auth
+- Axios
+- React Hot Toast
+- Lucide React
+- React Icons
+
+---
+
+## 📂 Project Structure
+
+```
+src
+│
+├── app
+├── components
+├── providers
+├── hooks
+├── services
+├── lib
+├── config
+├── utils
+└── middleware
+```
+
+---
+
+## 📦 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/SamiaBaly/fund-client
+```
+
+Go to the project folder
+
+```bash
+cd crowdfunding-client
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🔑 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file and add the following variables:
 
-## Learn More
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+BETTER_AUTH_URL=http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+BETTER_AUTH_SECRET=your_secret_key
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Public Pages
+
+- Home
+- All Campaigns
+- Campaign Details
+- About
+- Contact
+- Login
+- Register
+
+---
+
+### Supporter Dashboard
+
+- Dashboard Home
+- My Donations
+- Profile
+
+---
+
+### Creator Dashboard
+
+- Dashboard Home
+- My Campaigns
+- Create Campaign
+- Edit Campaign
+- Received Donations
+- Profile
+
+---
+
+### Admin Dashboard
+
+- Dashboard Home
+- Manage Users
+- Manage Campaigns
+- Manage Donations
+- Profile
+
+---
+
+## 💳 Payment Flow
+
+```
+Campaign Details
+
+↓
+
+Donate
+
+↓
+
+Stripe Checkout
+
+↓
+
+Payment Success
+
+↓
+
+Donation Saved
+
+↓
+
+Campaign Raised Amount Updated
+```
+
+---
+
+## 👥 User Roles
+
+### Supporter
+
+- Register & Login
+- View Campaigns
+- Donate to Campaigns
+- View Donation History
+
+### Creator
+
+- Create Campaign
+- Edit Campaign
+- Delete Campaign
+- View Received Donations
+
+### Admin
+
+- Manage Users
+- Approve Campaigns
+- Reject Campaigns
+- Delete Campaigns
+- View Platform Statistics
+
+---
+
+## 🎨 UI Features
+
+- Responsive Design
+- Mobile Navigation
+- Dark & Light Mode
+- Loading States
+- Empty States
+- Toast Notifications
+- Protected Dashboard
+- Modern Card Layout
+
+---
+
+## 🔒 Authentication
+
+- Better Auth
+- Session Management
+- Protected Routes
+- Role-Based Access Control
+
+---
+
+## 📌 Future Improvements
+
+- Campaign Comments
+- Campaign Sharing
+- Email Notifications
+- Campaign Categories Filter
+- User Profile Settings
+- Campaign Reports
+- Wishlist Feature
+
+---
+
+## 📄 License
+
+This project was developed for educational and portfolio purposes.
+
+---
+
+## 👩‍💻 Author
+
+**Samia Baly**
+
+GitHub: https://github.com/SamiaBaly
+
+LinkedIn: https://www.linkedin.com/in/samia-baly
+
+Email: samiabaly116@gmail.com
